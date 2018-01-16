@@ -7,6 +7,11 @@
 </template>
 <script>
 export default {
+  created(){
+    this.$http.get('http://localhost:8888/admin/data/user_list.php').then(respones=>{
+      console.log(respones.data.data);
+    })
+  },
   data:()=>{
     return {item:''};
   },
